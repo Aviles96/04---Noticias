@@ -1,0 +1,24 @@
+<ion-header [translucent]="true" mode="ios" clas="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Avile's News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense" mode="ios" class="ion-no-border">
+    <ion-toolbar>
+      <ion-title size="large">Avile's News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-noticias [noticias]="articles"></app-noticias>
+  <!-- Hay que especificar los articulos para que sean observables -->
+  <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData()">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>
